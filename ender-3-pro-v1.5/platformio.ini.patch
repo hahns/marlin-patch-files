@@ -1,0 +1,21 @@
+diff --git a/platformio.ini b/platformio.ini
+index 0abb4ac388..a1f3278086 100644
+--- a/platformio.ini
++++ b/platformio.ini
+@@ -18,7 +18,7 @@
+ [platformio]
+ src_dir      = Marlin
+ boards_dir   = buildroot/share/PlatformIO/boards
+-default_envs = mega2560
++default_envs = STM32F103RET6_creality
+ include_dir  = Marlin
+ 
+ #
+@@ -1124,6 +1124,7 @@ build_flags   = ${env:chitu_f103.build_flags} -DCHITU_V5_Z_MIN_BUGFIX
+ platform        = ${common_stm32f1.platform}
+ extends         = common_stm32f1
+ board           = genericSTM32F103RE
++platform_packages = tool-stm32duino
+ build_flags     = !python Marlin/src/HAL/STM32F1/build_flags.py
+   ${common.build_flags} -std=gnu++14 -DSTM32_XL_DENSITY -DTEMP_TIMER_CHAN=4
+ extra_scripts   = ${common.extra_scripts}
